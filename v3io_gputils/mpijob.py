@@ -66,7 +66,7 @@ class MpiJob:
         if image:
             self._update_container('image', image)
         if command:
-            self._update_container('command', ['mpirun','python'] + command)
+            self._update_container('command', ['mpirun'] + command)
         if replicas:
             self._struct['spec']['replicas'] = replicas
         self._update_access_token(environ.get('V3IO_ACCESS_KEY',''))
